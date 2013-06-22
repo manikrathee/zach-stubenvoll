@@ -13,13 +13,33 @@ var   win             = $(window),
       doc             = $(document),
       body            = $('body'),
       self            = $(this),
-      windowHeight    = win.height();
+      windowHeight    = win.height(),
+      current         = 1,
+      welcomeIterate;
 
 
-$(document).ready(function() {
+function viewportScale(){
   if ( win.innerWidth() > 767 ) {
     $('.main').css('top', windowHeight);
+  } else {
+    $('.main').css('top',0);
   }
+}
+
+$(document).ready(function() {
+  viewportScale();
+
+  win.resize(function(){
+    viewportScale();
+  });
+
+  welcomeIterate = setInterval(function () {
+    current++;
+    $('header').removeClass().addClass('step-' + current);
+    if (current === 4){
+      clearInterval(welcomeIterate);
+    }
+  }, 3000);
 });
 
 

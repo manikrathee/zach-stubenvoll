@@ -61,7 +61,7 @@ i{
   @include size(75px, 5px);
 }
 
-.hey-facebook{
+#hey-facebook{
   display: block;
   background: $grey url('../img/bg-500.jpg') no-repeat;
   background-size: 100%;
@@ -74,6 +74,49 @@ i{
   h1{
     margin: 0;
   }
+  ol{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  li{
+    vertical-align: middle;
+  }
+  li{
+    display: none;
+    width: 100%;
+    @include animate-slow;
+    @include fadeOutUp;
+    h1 span{
+      -webkit-animation-delay: 0, 0.5s;
+      -moz-animation-delay: 0, 0.5s;
+    }
+  }
+  .visible-step{
+    display: table-cell;
+    @include fadeInDown;
+  }
+  &.step-1{
+    .step-1{
+      @extend .visible-step;
+    }
+  }
+  &.step-2{
+    .step-2{
+      @extend .visible-step;
+    }
+  }
+  &.step-3{
+    .step-3{
+      @extend .visible-step;
+    }
+  }
+  &.step-4{
+    .step-4{
+      @extend .visible-step;
+    }
+  }
+
 }
 
 .main{
