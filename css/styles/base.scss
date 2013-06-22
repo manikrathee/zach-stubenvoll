@@ -139,8 +139,12 @@ i{
   background: $white;
 }
 .work{
-  background: $grey;
+  background: $white;
   padding: 75px 20px;
+  text-align: center;
+}
+.work ~ .work{
+  background: $light-grey;
 }
 .lets-chat{
   background: $dark-grey;
@@ -194,5 +198,6 @@ footer{
   .top{
     float: left;
     width: 25%;
+    text-align: right;
   }
 }
