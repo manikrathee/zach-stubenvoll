@@ -6,12 +6,9 @@
 @import "import/media-queries";
 @import "import/animation";
 
-// @import "bourbon";
-
-
 @import "styles/base";
 
-@media (min-width: 769px){
+@media (min-width: 767px){
 	@import "styles/small-screen";
 }
 

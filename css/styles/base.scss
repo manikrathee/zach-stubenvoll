@@ -10,8 +10,8 @@
   $light-grey: rgba(245,245,244,1); // #f5f5f4
 
   // Base Type
-  $headline: "refrigerator-deluxe-1","refrigerator-deluxe-2", Helvetica, Arial, sans-serif;
-  $body:  "proxima-nova", Helvetica, Arial, sans-serif;
+  $headline: "refrigerator-deluxe-1", "refrigerator-deluxe-2", Helvetica, Arial, sans-serif;
+  $body-copy:  "proxima-nova", Helvetica, Arial, sans-serif;
 
   // Elements
   $divider: 1px solid rgba(229,229,229,1); /* #E5E5E5 */
@@ -28,49 +28,57 @@ a:link { -webkit-tap-highlight-color: none; }
 html, body {
 }
 body {
-  -webkit-backface-visibility: hidden;
   text-rendering: optimizelegibility;
-
-  // HiDPI/Retina Media Query
-  @include hdpi {
-    background-image:  url('../img/');
-  }
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  // @include hdpi {
+  //   background-image:  url('../img/');
+  // }
 }
-
-a {
-  text-decoration: none;
-  @include transition(color 0.25s linear);
-  &:hover {
-  }
-}
-
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: "refrigerator-deluxe-1","refrigerator-deluxe-2", Helvetica, Arial, sans-serif;
+  font-family: $headline;
 }
 p{
-
+  font-family: $body-copy;
+  font-size: 1em;
 }
 ol{
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
-
-.hey-facebook{
-  display: block;
-  background: $red;
-  position: absolute;
-  z-index: 300;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+a {
+  text-decoration: none;
+  @include transition(color 0.25s linear);
+  &:hover {
+  }
 }
-
 i{
   display: block;
   background: $red;
-  @include size(162px, 10px);
+  margin: 10px auto;
+  @include size(75px, 5px);
+}
+
+.hey-facebook{
+  display: block;
+  background: $grey url('../img/bg-500.jpg') no-repeat;
+  background-size: 100%;
+  position: relative;
+  z-index: 200;
+  padding: 50px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  h1{
+    margin: 0;
+  }
+}
+
+.main{
+  position: relative;
+  top: 0;
+  z-index: 300;
+  background: $white;
 }

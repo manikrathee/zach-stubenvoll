@@ -7,18 +7,24 @@
 
 //@codekit-prepend "libs/jquery-1.7.1.min.js";
 
-// "libs/ss-standard.js";
-// "libs/ss-social.js";
 
 
-var   win   = $(window),
-      doc   = $(document),
-      body  = $('body'),
-      self = $(this);
+var   win             = $(window),
+      doc             = $(document),
+      body            = $('body'),
+      self            = $(this),
+      windowHeight    = win.height();
+
+
+$(document).ready(function() {
+  if ( win.innerWidth() > 767 ) {
+    $('.main').css('top', windowHeight);
+  }
+});
 
 
 /*  Google Analytics  */
-var googleAnalyticsID = UA-;
+var googleAnalyticsID = 'UA-';
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', googleAnalyticsID]);
