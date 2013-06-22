@@ -38,6 +38,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $headline;
+  font-weight: 400;
 }
 p{
   font-family: $body-copy;
@@ -57,7 +58,7 @@ a {
 i{
   display: block;
   background: $red;
-  margin: 10px auto;
+  margin: 4px auto 10px;
   @include size(75px, 5px);
 }
 
@@ -73,6 +74,11 @@ i{
   color: $white;
   h1{
     margin: 0;
+    font-size: 1.4em;
+    span{
+      font-size: 4em;
+      letter-spacing: 2px;
+    }
   }
   ol{
     display: table;
