@@ -38,6 +38,7 @@ $(document).ready(function() {
     $('header').removeClass().addClass('step-' + current);
     if (current === 4){
       clearInterval(welcomeIterate);
+      $('.step-4 a').addClass('show');
     }
   }, 3000);
 });

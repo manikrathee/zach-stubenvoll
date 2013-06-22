@@ -38,6 +38,9 @@ body {
   // }
 }
 h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
   font-family: $headline;
   font-weight: 400;
 }
@@ -87,16 +90,17 @@ i{
     height: 100%;
   }
   li{
-    vertical-align: middle;
-  }
-  li{
     display: none;
+    vertical-align: middle;
     width: 100%;
     @include animate-slow;
-    @include fadeOutUp;
-    h1 span{
-      -webkit-animation-delay: 0, 0.5s;
-      -moz-animation-delay: 0, 0.5s;
+    @include fadeOut;
+    a{
+      &.show{
+        @include animate;
+        @include fadeInDown;
+        @include delay-long;
+      }
     }
   }
   .visible-step{
@@ -125,10 +129,18 @@ i{
   }
   a{
     display: block;
+    padding-bottom: 100px;
     font-family: $headline;
     font-size: 1.5em;
     color: $white;
-    margin-top: 8em;
+    margin-top: 12em;
+    span{
+      display: block;
+      background: transparent url('../img/arrow@2x.png') 50% 100% no-repeat;
+      background-size: 100%;
+      margin: 20px auto 0;
+      @include size(28px,16px);
+    }
   }
 }
 
@@ -142,6 +154,9 @@ i{
   background: $white;
   padding: 75px 20px;
   text-align: center;
+  i{
+    width: 100%;
+  }
 }
 .work ~ .work{
   background: $light-grey;
@@ -183,10 +198,25 @@ footer{
     font-family: $headline;
     color: $dark-grey;
   }
+  a{
+    &:hover{
+      color: $red;
+    }
+  }
   p{
     float: left;
     width: 25%;
     margin: 0;
+    em{
+      @include ir;
+      display: inline-block;
+      vertical-align: top;
+      zoom: 1;
+      background: transparent url('../img/heart@2x.png') 50% 50% no-repeat;
+      background-size: 100%;
+      margin: 2px 2px 0;
+      @include size(12px,11px);
+    }
   }
   .web{
     float: left;
