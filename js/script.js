@@ -5,7 +5,7 @@
  *
  */
 
-//@codekit-prepend "libs/jquery-1.7.1.min.js","libs/lazyload.js";
+//@codekit-prepend "libs/jquery-1.7.1.min.js","libs/waypoints.js","libs/lazyload.js",;
 
 
 
@@ -53,14 +53,29 @@ $(document).ready(function() {
   });
 
 
-  $('.expand').slideUp();
 
   $('.expander').click(function(e){
     e.preventDefault();
-    $('.expand').slideDown();
+    $('.expand').slideDown().addClass('active');
     $('.condenser').addClass('active');
   });
-});
+
+  // hide condenser when field strat is shown
+  // $('.field-strategies').waypoint(function(e) {
+  //   console.log('field');
+  //   $('.condenser').removeClass('active');
+  // });
+
+  // show condenser when field strat is shown
+  // $('.vii').waypoint(function(e) {
+  //   console.log('vii');
+  //   if ( $('.expand').hasClass('active') ){
+  //     $('.condenser').addClass('active');
+  //   }
+  // });
+
+
+}); // docready
 
 
 /*  Google Analytics  */

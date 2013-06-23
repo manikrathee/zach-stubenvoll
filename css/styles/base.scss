@@ -32,6 +32,7 @@ body {
   text-rendering: optimizelegibility;
   -webkit-backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
+  font-family: $body-copy;
   font-size: 14px;
   // @include hdpi {
   //   background-image:  url('../img/');
@@ -48,7 +49,7 @@ p{
   font-family: $body-copy;
   font-size: 1em;
 }
-ol{
+ul, ol{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -64,6 +65,9 @@ i{
   background: $red;
   margin: 4px auto 10px;
   @include size(75px, 5px);
+}
+img{
+  max-width: 100%;
 }
 
 #hey-facebook{
@@ -145,18 +149,38 @@ i{
   background: $white;
   padding: 75px 20px;
   text-align: center;
+  &:nth-child(even){
+    background: $light-grey;
+  }
   i{
     width: 100%;
   }
-}
-.work ~ .work{
-  background: $light-grey;
-}
-.expand{
-  display: none;
+  p{
+    width: 550px;
+    max-width: 95%;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+  }
+  a:not(.condenser){
+    display: inline-block;
+    // width: 100%;
+    margin: 0 auto 20px;
+    color: $red;
+    border: 1px solid transparent;
+    padding: 10px;
+    @include radius(4px);
+    @include transition( (color 0.25s ease-in-out),(border 0.25s ease-in-out) );
+    &:hover{
+      color: darken($red, 20%);
+      border-color: darken($red, 20%);
+    }
+  }
   img{
     margin: 0 0 20px 0;
   }
+}
+.expand{
+  display: none;
 }
 .condenser{
   display: none;
@@ -166,9 +190,10 @@ i{
   font-size: 13px;
   text-transform: uppercase;
   font-family: $headline;
+  @include animate;
+  @include fadeOutLeft;
   &.active{
     display: block;
-    @include animate;
     @include fadeInLeft;
   }
 }
@@ -206,6 +231,9 @@ footer{
   font-size: 1em;
   p, a{
     display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+    text-align: center;
     font-family: $headline;
     color: $dark-grey;
   }
@@ -215,9 +243,6 @@ footer{
     }
   }
   p{
-    float: left;
-    width: 25%;
-    margin: 0;
     em{
       @include ir;
       display: inline-block;
@@ -228,17 +253,5 @@ footer{
       margin: 2px 2px 0;
       @include size(12px,11px);
     }
-  }
-  .web{
-    float: left;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .top{
-    float: left;
-    width: 25%;
-    text-align: right;
   }
 }
