@@ -124,7 +124,7 @@ img{
         text-align: center;
         @include box;
         @include animate;
-        @include fadeInDownBig;
+        @include fadeInDown;
         @include delay;
         @include transition(background 0.25s ease-in-out);
         &:hover{
@@ -144,7 +144,7 @@ img{
               @extend .visible-step;
               &.fade{
                   opacity: 0;
-                  @include animate;
+                  @include animate-slow;
                   @include fadeOutDown;
               }
           }
