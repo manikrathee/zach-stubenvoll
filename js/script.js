@@ -35,7 +35,11 @@ $(document).ready(function() {
 
   welcomeIterate = setInterval(function () {
     current++;
-    $('header').removeClass().addClass('step-' + current);
+    $("header").removeClass().delay(300).queue(function(next){
+        $('header').addClass('step-' + current);
+        next();
+    });
+    // $('header').removeClass().addClass('step-' + current);
     if (current === 4){
       clearInterval(welcomeIterate);
       $('.step-4 a').addClass('show');

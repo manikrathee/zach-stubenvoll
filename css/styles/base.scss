@@ -90,10 +90,15 @@ i{
     height: 100%;
   }
   li{
-    display: none;
+  display: block;
+  position: absolute;
+top: 50%;
+left: 50%;
+margin: -200px 0 0 -200px;
+    overflow: hidden;
     vertical-align: middle;
     width: 100%;
-    @include animate-slow;
+    @include animate-fast;
     @include fadeOut;
     a{
       &.show{
@@ -105,27 +110,15 @@ i{
   }
   .visible-step{
     display: table-cell;
+    @include animate-slow;
     @include fadeInDown;
   }
-  &.step-1{
-    .step-1{
-      @extend .visible-step;
-    }
-  }
-  &.step-2{
-    .step-2{
-      @extend .visible-step;
-    }
-  }
-  &.step-3{
-    .step-3{
-      @extend .visible-step;
-    }
-  }
-  &.step-4{
-    .step-4{
-      @extend .visible-step;
-    }
+  @for $i from 1 through 5{
+      &.step-#{$i}{
+          .step-#{$i}{
+              @extend .visible-step;
+          }
+      }
   }
   a{
     display: block;
