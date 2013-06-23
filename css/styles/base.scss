@@ -101,9 +101,10 @@ img{
 #hey-facebook{
   display: block;
   background: $grey url('../img/bg-500.jpg') no-repeat;
-  background-size: 100%;
+  background-size: cover;
   position: relative;
   z-index: 200;
+  height: 165px;
   padding: 50px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -112,7 +113,7 @@ img{
     margin: 0;
     font-size: 1.4em;
     span{
-      font-size: 3.5em;
+      font-size: 1.5em;
       letter-spacing: 1px;
     }
   }
@@ -143,13 +144,16 @@ img{
       a{
         display: block;
         position: absolute;
-        bottom: 20px;
+        bottom: -75px;
         left: 50%;
         width: 175px;
         height: 85px;
         padding: 10px 0;
         margin: 0 0 0 -87px;
+        font-family: $headline;
         text-align: center;
+        font-size: 1em;
+        color: $white;
         @include box;
         @include animate;
         @include fadeInDown;
@@ -157,17 +161,12 @@ img{
         &:hover{
           background: rgba(0,0,0,0.1);
         }
-        &.waiting{
-          -webkit-animation:  slow-bounce 1.5s infinite; /* Safari 4+ */
-          -moz-animation:    slow-bounce 1.5s infinite; /* Fx 5+ */
-          -o-animation:      slow-bounce 1.5s infinite; /* Opera 12+ */
-          animation:         slow-bounce 1.5s infinite; /* IE 10+ */
-        }
-        &.halt{
-          -webkit-animation:  none; /* Safari 4+ */
-          -moz-animation:    none; /* Fx 5+ */
-          -o-animation:      none; /* Opera 12+ */
-          animation:         none; /* IE 10+ */
+        span{
+          display: block;
+          background: transparent url('../img/arrow@2x.png') 50% 100% no-repeat;
+          background-size: 100%;
+          margin: 0 auto;
+          @include size(10px,10px);
         }
       }
     }
@@ -189,21 +188,6 @@ img{
               }
           }
       }
-  }
-  a{
-    display: block;
-    padding-bottom: 100px;
-    font-family: $headline;
-    font-size: 1.5em;
-    color: $white;
-    margin-top: 12em;
-    span{
-      display: block;
-      background: transparent url('../img/arrow@2x.png') 50% 100% no-repeat;
-      background-size: 100%;
-      margin: 20px auto 0;
-      @include size(28px,16px);
-    }
   }
 }
 
@@ -247,6 +231,10 @@ img{
     display: block;
     margin: 0 auto 50px;
   }
+  &.louden, &.field-strategies{
+    position: relative;
+    z-index: 400;
+  }
 }
 .expand{
   display: none;
@@ -256,9 +244,11 @@ img{
   position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 200;
   font-size: 13px;
   text-transform: uppercase;
   font-family: $headline;
+  color: $red;
   @include animate;
   @include fadeOutLeft;
   &.active{

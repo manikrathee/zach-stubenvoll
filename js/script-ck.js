@@ -628,6 +628,13 @@ $(document).ready(function() {
     $('.condenser').addClass('active');
   });
 
+
+  $('.condenser').click(function(e){
+    e.preventDefault();
+    $('.expand').slideUp().removeClass('active');
+    $('.condenser').removeClass('active');
+  });
+
   // hide condenser when field strat is shown
   // $('.field-strategies').waypoint(function(e) {
   //   console.log('field');
