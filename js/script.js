@@ -51,6 +51,15 @@ $(document).ready(function() {
     effect : "fadeIn",
     threshold : 0
   });
+
+
+  $('.expand').slideUp();
+
+  $('.expander').click(function(e){
+    e.preventDefault();
+    $('.expand').slideDown();
+    $('.condenser').addClass('active');
+  });
 });
 
 

@@ -152,6 +152,26 @@ i{
 .work ~ .work{
   background: $light-grey;
 }
+.expand{
+  display: none;
+  img{
+    margin: 0 0 20px 0;
+  }
+}
+.condenser{
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: $headline;
+  &.active{
+    display: block;
+    @include animate;
+    @include fadeInLeft;
+  }
+}
 .lets-chat{
   background: $dark-grey;
   padding: 75px 20px;
