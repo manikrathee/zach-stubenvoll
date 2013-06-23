@@ -5,7 +5,7 @@
  *
  */
 
-//@codekit-prepend "libs/jquery-1.7.1.min.js";
+//@codekit-prepend "libs/jquery-1.7.1.min.js","libs/lazyload.js";
 
 
 
@@ -46,6 +46,11 @@ $(document).ready(function() {
       $('.step-4 a').addClass('show');
     }
   }, 4000);
+
+  $('.work img').lazyload({
+    effect : "fadeIn",
+    threshold : 0
+  });
 });
 
 
