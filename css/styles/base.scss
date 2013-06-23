@@ -97,11 +97,39 @@ img{
     display: none;
     vertical-align: middle;
     width: 100%;
+  }
+  .step-4{
+    h1{
+     @include transition(margin 1s ease-in-out);
+    }
     a{
-      &.show{
+      display: none;
+      position: absolute;
+      bottom: -10%;
+    }
+    &.alt{
+      position: relative;
+      h1{
+        margin-top: -10%;
+      }
+      a{
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        width: 175px;
+        height: 85px;
+        padding: 10px 0;
+        margin: 0 0 0 -87px;
+        text-align: center;
+        @include box;
         @include animate;
-        @include fadeInDown;
-        @include delay-long;
+        @include fadeInDownBig;
+        @include delay;
+        @include transition(background 0.25s ease-in-out);
+        &:hover{
+          background: rgba(0,0,0,0.1);
+        }
       }
     }
   }
