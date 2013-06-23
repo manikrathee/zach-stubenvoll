@@ -36,18 +36,29 @@ $(document).ready(function() {
   welcomeIterate = setInterval(function () {
     $('header li.step-' + current).addClass('fade');
     current++;
-    $('header').addClass('fade').delay(500).queue(function(next){
+    $('header').addClass('fade').delay(850).queue(function(next){
         $('header').removeClass().addClass('step-' + current);
         next();
     });
     if (current === 4){
       clearInterval(welcomeIterate);
-      $('.step-4').delay(2000).queue(function(next){
+      $('.step-4').delay(4000).queue(function(next){
           $(this).addClass('alt');
           next();
       });
+      $('.step-4 a').delay(7000).queue(function(next){
+          $(this).addClass('waiting');
+          next();
+      });
     }
-  }, 2750);
+  }, 3000);
+
+  win.scroll(function() {
+      if ($(window).scrollTop() > 8) {
+          $('.step-4 a').removeClass('waiting');
+      }
+  });
+
 
   $('.work img').lazyload({
     effect : "fadeIn",
@@ -75,6 +86,10 @@ $(document).ready(function() {
   //     $('.condenser').addClass('active');
   //   }
   // });
+
+  $('.top').click(function(e){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  });
 
 
 }); // docready

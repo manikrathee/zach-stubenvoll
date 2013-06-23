@@ -17,7 +17,35 @@
   // Elements
   $divider: 1px solid rgba(229,229,229,1); /* #E5E5E5 */
 
-
+  //Keyframes
+  @-webkit-keyframes slow-bounce {
+    0%   { margin-bottom: 0; }
+    10%   { margin-bottom: 2px; }
+    20%   { margin-bottom: 4px; }
+    30%   { margin-bottom: 8px; }
+    40%   { margin-bottom: 10px; }
+    50%   { margin-bottom: 8px; }
+    60%   { margin-bottom: 4px; }
+    70%   { margin-bottom: 2px; }
+    80%   { margin-bottom: 0; }
+    90%   { margin-bottom: 0; }
+    100% { margin-bottom: 0; }
+  }
+  @-moz-keyframes slow-bounce {
+    0%   { margin-bottom: 0; }
+    50% { margin-bottom: 10px; }
+    100% { margin-bottom: 0; }
+  }
+  @-o-keyframes slow-bounce {
+    0%   { margin-bottom: 0; }
+    50% { margin-bottom: 10px; }
+    100% { margin-bottom: 0; }
+  }
+  @keyframes slow-bounce {
+    0%   { margin-bottom: 0; }
+    50% { margin-bottom: 10px; }
+    100% { margin-bottom: 0; }
+  }
 
 // Highlights
 ::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
@@ -125,14 +153,20 @@ img{
         @include box;
         @include animate;
         @include fadeInDown;
-        @include delay;
         @include transition(background 0.25s ease-in-out);
         &:hover{
           background: rgba(0,0,0,0.1);
         }
+        &.waiting{
+          -webkit-animation:  slow-bounce 1.5s infinite; /* Safari 4+ */
+           -moz-animation:    slow-bounce 1.5s infinite; /* Fx 5+ */
+           -o-animation:      slow-bounce 1.5s infinite; /* Opera 12+ */
+           animation:         slow-bounce 1.5s infinite; /* IE 10+ */
+        }
       }
     }
   }
+
   .visible-step{
     display: table-cell;
     @include animate-slow;
@@ -144,8 +178,8 @@ img{
               @extend .visible-step;
               &.fade{
                   opacity: 0;
-                  @include animate-slow;
-                  @include fadeOutDown;
+                  @include animate;
+                  @include fadeOut;
               }
           }
       }
