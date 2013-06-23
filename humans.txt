@@ -3,39 +3,46 @@
 
 
 /* TEAM */
-  Manik Rathee
+  Zach Stubenvoll, Design
+  Site: www.zachstubenvoll.com
+  Twitter: @zachstubenvoll
+  Location: Chicago, IL
+
+  Manik Rathee, Frontend
   Site: www.manikrathee.com
   Twitter: @manikrathee
-  Location: East Coast, USA
+  Location: San Francisco, CA
 
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Modernizr, jQuery
-  
-  
+  Components: Modernizr, jQuery, Waypoints
+  Codekit to compile, concatenate & minify SASS & JS
+  Images Optimised through photoshop, imageoptim & codekit
 
-                                    
-                               -o/-                       
-                               +oo//-                     
-                              :ooo+//:                    
-                             -ooooo///-                   
-                             /oooooo//:                   
-                            :ooooooo+//-                  
-                           -+oooooooo///-                 
-           -://////////////+oooooooooo++////////////::    
-            :+ooooooooooooooooooooooooooooooooooooo+:::-  
+
+
+
+                               -o/-
+                               +oo//-
+                              :ooo+//:
+                             -ooooo///-
+                             /oooooo//:
+                            :ooooooo+//-
+                           -+oooooooo///-
+           -://////////////+oooooooooo++////////////::
+            :+ooooooooooooooooooooooooooooooooooooo+:::-
               -/+ooooooooooooooooooooooooooooooo+/::////:-
                 -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-   
-                     -:+ooooooooooooooooo+:://////:--     
-                       /ooooooooooooooooo+//////:-        
-                      -ooooooooooooooooooo////-           
-                      /ooooooooo+oooooooooo//:            
-                     :ooooooo+/::/+oooooooo+//-           
-                    -oooooo/::///////+oooooo///-          
-                    /ooo+::://////:---:/+oooo//:          
-                   -o+/::///////:-      -:/+o+//-         
-                   :-:///////:-            -:/://         
-                     -////:-                 --//:        
-                       --                       -:        
+                  --/+ooooooooooooooooooooo+::://////:-
+                     -:+ooooooooooooooooo+:://////:--
+                       /ooooooooooooooooo+//////:-
+                      -ooooooooooooooooooo////-
+                      /ooooooooo+oooooooooo//:
+                     :ooooooo+/::/+oooooooo+//-
+                    -oooooo/::///////+oooooo///-
+                    /ooo+::://////:---:/+oooo//:
+                   -o+/::///////:-      -:/+o+//-
+                   :-:///////:-            -:/://
+                     -////:-                 --//:
+                       --                       -:
