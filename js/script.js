@@ -34,9 +34,10 @@ $(document).ready(function() {
   });
 
   welcomeIterate = setInterval(function () {
+    $('header li.step-' + current).addClass('fade');
     current++;
-    $("header").removeClass().delay(300).queue(function(next){
-        $('header').addClass('step-' + current);
+    $('header').addClass('fade').delay(500).queue(function(next){
+        $('header').removeClass().addClass('step-' + current);
         next();
     });
     // $('header').removeClass().addClass('step-' + current);
@@ -44,7 +45,7 @@ $(document).ready(function() {
       clearInterval(welcomeIterate);
       $('.step-4 a').addClass('show');
     }
-  }, 3000);
+  }, 4000);
 });
 
 
