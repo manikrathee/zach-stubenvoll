@@ -159,9 +159,15 @@ img{
         }
         &.waiting{
           -webkit-animation:  slow-bounce 1.5s infinite; /* Safari 4+ */
-           -moz-animation:    slow-bounce 1.5s infinite; /* Fx 5+ */
-           -o-animation:      slow-bounce 1.5s infinite; /* Opera 12+ */
-           animation:         slow-bounce 1.5s infinite; /* IE 10+ */
+          -moz-animation:    slow-bounce 1.5s infinite; /* Fx 5+ */
+          -o-animation:      slow-bounce 1.5s infinite; /* Opera 12+ */
+          animation:         slow-bounce 1.5s infinite; /* IE 10+ */
+        }
+        &.halt{
+          -webkit-animation:  none; /* Safari 4+ */
+          -moz-animation:    none; /* Fx 5+ */
+          -o-animation:      none; /* Opera 12+ */
+          animation:         none; /* IE 10+ */
         }
       }
     }

@@ -609,8 +609,8 @@ $(document).ready(function() {
   }, 3000);
 
   win.scroll(function() {
-      if ($(window).scrollTop() > 8) {
-          $('.step-4 a').removeClass('waiting');
+      if ($(window).scrollTop() > 200) {
+          $('.step-4 a').addClass('halt').removeClass('waiting');
       }
   });
 
