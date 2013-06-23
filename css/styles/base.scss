@@ -137,9 +137,9 @@ img{
     }
     &.alt{
       position: relative;
-      h1{
-        margin-top: -10%;
-      }
+      // h1{
+      //   margin-top: -10%;
+      // }
       a{
         display: block;
         position: absolute;
@@ -230,20 +230,21 @@ img{
     line-height: 1.4;
   }
   a:not(.condenser){
-    display: inline-block;
-    // width: 100%;
+    display: block;
+    width: 100%;
     margin: 0 auto 20px;
     color: $red;
-    border: 1px solid transparent;
+    // border: 1px solid transparent;
     padding: 10px;
     @include radius(4px);
     @include transition( (color 0.25s ease-in-out),(border 0.25s ease-in-out) );
     &:hover{
       color: darken($red, 20%);
-      border-color: darken($red, 20%);
+      // border-color: darken($red, 20%);
     }
   }
   img{
+    display: block;
     margin: 0 0 20px 0;
   }
 }
