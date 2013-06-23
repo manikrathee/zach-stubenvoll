@@ -595,12 +595,14 @@ $(document).ready(function() {
         $('header').removeClass().addClass('step-' + current);
         next();
     });
-    // $('header').removeClass().addClass('step-' + current);
     if (current === 4){
       clearInterval(welcomeIterate);
-      $('.step-4 a').addClass('show');
+      $('.step-4').delay(2000).queue(function(next){
+          $(this).addClass('alt');
+          next();
+      });
     }
-  }, 4000);
+  }, 2750);
 
   $('.work img').lazyload({
     effect : "fadeIn",
