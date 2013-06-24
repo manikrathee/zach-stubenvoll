@@ -614,26 +614,23 @@ $(document).ready(function() {
       }
   });
 
-
   $('.work img').lazyload({
     effect : "fadeIn",
     threshold : 0
   });
 
+  // $('.expander').click(function(e){
+  //   e.preventDefault();
+  //   $('.expand').slideDown().addClass('active');
+  //   $('.condenser').addClass('active');
+  // });
 
 
-  $('.expander').click(function(e){
-    e.preventDefault();
-    $('.expand').slideDown().addClass('active');
-    $('.condenser').addClass('active');
-  });
-
-
-  $('.condenser').click(function(e){
-    e.preventDefault();
-    $('.expand').slideUp().removeClass('active');
-    $('.condenser').removeClass('active');
-  });
+  // $('.condenser').click(function(e){
+  //   e.preventDefault();
+  //   $('.expand').slideUp().removeClass('active');
+  //   $('.condenser').removeClass('active');
+  // });
 
   // hide condenser when field strat is shown
   // $('.field-strategies').waypoint(function(e) {
@@ -652,7 +649,6 @@ $(document).ready(function() {
   $('.top').click(function(e){
     $("html, body").animate({ scrollTop: 0 }, "slow");
   });
-
 
 }); // docready
 

@@ -95,6 +95,73 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 8878,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/style.scss",
+			"settings":
+			{
+				"buffer_size": 563,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/styles/base.scss",
+			"settings":
+			{
+				"buffer_size": 6332,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/styles/small-screen.scss",
+			"settings":
+			{
+				"buffer_size": 1518,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/styles/medium-screen.scss",
+			"settings":
+			{
+				"buffer_size": 101,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/styles/large-screen.scss",
+			"settings":
+			{
+				"buffer_size": 44,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/import/animation.scss",
+			"settings":
+			{
+				"buffer_size": 67168,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/*\n * scripts.js\n *\n * auto-concatenated jquery, symbolset and custom alternate files\n *\n */\n\n//@codekit-prepend \"libs/jquery-1.7.1.min.js\",\"libs/waypoints.js\",\"libs/lazyload.js\",;\n\n\n\nvar   win             = $(window),\n      doc             = $(document),\n      body            = $('body'),\n      self            = $(this),\n      windowHeight    = win.height(),\n      current         = 1,\n      welcomeIterate;\n\n\nfunction viewportScale(){\n  if ( win.innerWidth() > 767 ) {\n    $('.main').css('top', windowHeight);\n  } else {\n    $('.main').css('top',0);\n  }\n}\n\n$(document).ready(function() {\n  viewportScale();\n\n  win.resize(function(){\n    viewportScale();\n  });\n\n  welcomeIterate = setInterval(function () {\n    $('header li.step-' + current).addClass('fade');\n    current++;\n    $('header').addClass('fade').delay(850).queue(function(next){\n        $('header').removeClass().addClass('step-' + current);\n        next();\n    });\n    if (current === 4){\n      clearInterval(welcomeIterate);\n      $('.step-4').delay(4000).queue(function(next){\n          $(this).addClass('alt');\n          next();\n      });\n      $('.step-4 a').delay(7000).queue(function(next){\n          $(this).addClass('waiting');\n          next();\n      });\n    }\n  }, 3000);\n\n  win.scroll(function() {\n      if ($(window).scrollTop() > 200) {\n          $('.step-4 a').addClass('halt').removeClass('waiting');\n      }\n  });\n\n  $('.work img').lazyload({\n    effect : \"fadeIn\",\n    threshold : 0\n  });\n\n  // $('.expander').click(function(e){\n  //   e.preventDefault();\n  //   $('.expand').slideDown().addClass('active');\n  //   $('.condenser').addClass('active');\n  // });\n\n\n  // $('.condenser').click(function(e){\n  //   e.preventDefault();\n  //   $('.expand').slideUp().removeClass('active');\n  //   $('.condenser').removeClass('active');\n  // });\n\n  // hide condenser when field strat is shown\n  // $('.field-strategies').waypoint(function(e) {\n  //   console.log('field');\n  //   $('.condenser').removeClass('active');\n  // });\n\n  // show condenser when field strat is shown\n  // $('.vii').waypoint(function(e) {\n  //   console.log('vii');\n  //   if ( $('.expand').hasClass('active') ){\n  //     $('.condenser').addClass('active');\n  //   }\n  // });\n\n  $('.top').click(function(e){\n    $(\"html, body\").animate({ scrollTop: 0 }, \"slow\");\n  });\n\n}); // docready\n\n\n/*  Google Analytics  */\nvar googleAnalyticsID = 'UA-';\n\nvar _gaq = _gaq || [];\n_gaq.push(['_setAccount', googleAnalyticsID]);\n_gaq.push(['_trackPageview']);\n\n(function() {\n  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n  ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n})();",
+			"file": "js/script.js",
+			"file_size": 2899,
+			"file_write_time": 1372030663000000,
+			"settings":
+			{
+				"buffer_size": 2810,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -144,6 +211,7 @@
 	},
 	"file_history":
 	[
+		"/Users/manikrathee/Dropbox/#Symlink/Consulting/2013/Zach-Stubenvoll-Facebook/css/import/animation.scss",
 		"/opt/fluence/fluenceweb/shell/static/tpl/SubmissionTableRowView.html",
 		"/opt/fluence/fluenceweb/server/config.py",
 		"/opt/fluence/fluenceweb/client/static/tpl/SubmissionView.html",
@@ -270,8 +338,7 @@
 		"/opt/fluence/fluenceweb/shell/static/js/views/header.js",
 		"/opt/fluence/fluenceweb/shell/static/js/views/core.js",
 		"/opt/fluence/fluenceweb/shell/static/css/styles.css",
-		"/opt/fluence/fluenceweb/shell/static/tpl/SubmissionView.html",
-		"/opt/fluence/fluenceweb/shell/static/tpl/SubmissionListItemView.html"
+		"/opt/fluence/fluenceweb/shell/static/tpl/SubmissionView.html"
 	],
 	"find":
 	{
@@ -420,7 +487,7 @@
 			"icon-dark"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -486,18 +553,239 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 8878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4431,
+								4431
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 839.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "css/style.scss",
+					"settings":
+					{
+						"buffer_size": 563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/styles/base.scss",
+					"settings":
+					{
+						"buffer_size": 6332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3498,
+								3498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2945.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/styles/small-screen.scss",
+					"settings":
+					{
+						"buffer_size": 1518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/styles/medium-screen.scss",
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/styles/large-screen.scss",
+					"settings":
+					{
+						"buffer_size": 44,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/import/animation.scss",
+					"settings":
+					{
+						"buffer_size": 67168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24339,
+								24352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 22410.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 7,
+					"file": "js/script.js",
+					"settings":
+					{
+						"buffer_size": 2810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2318,
+								2318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1593.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -560,6 +848,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"anim",
+				"css/import/animation.scss"
+			],
+			[
+				"anima",
+				"css/import/animation.scss"
+			],
 			[
 				"config",
 				"fluenceweb/server/config.py"
@@ -677,10 +973,6 @@
 				"fluenceweb/server/templates/terms-of-service.html"
 			],
 			[
-				"anima",
-				"fluenceweb/client/static/css/core/animation.scss"
-			],
-			[
 				"base",
 				"fluenceweb/client/static/css/styles/base.sass"
 			],
@@ -715,10 +1007,6 @@
 			[
 				"nav",
 				"client/static/tpl/HeaderView.html"
-			],
-			[
-				"anim",
-				"client/static/css/import/animation.scss"
 			],
 			[
 				"noti",
@@ -1010,7 +1298,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 305.0,
 	"status_bar_visible": true
 }
