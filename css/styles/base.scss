@@ -204,6 +204,9 @@ img{
   &:nth-child(even){
     background: $light-grey;
   }
+  h1{
+    text-transform: uppercase;
+  }
   i{
     width: 100%;
   }
@@ -212,19 +215,19 @@ img{
     max-width: 95%;
     margin: 0 auto 20px;
     line-height: 1.4;
+    &.description{
+      font-size: 1.15em;
+    }
   }
-  a:not(.condenser){
-    // display: block;
-    // width: 100%;
+  a:not(.condenser), p a{
+    font-size: 1em;
     margin: 0 auto 20px;
     color: $red;
-    // border: 1px solid transparent;
     padding: 10px;
     @include radius(4px);
     @include transition( (color 0.25s ease-in-out),(border 0.25s ease-in-out) );
     &:hover{
       color: darken($red, 20%);
-      // border-color: darken($red, 20%);
     }
   }
   img{
