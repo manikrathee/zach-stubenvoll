@@ -102,9 +102,10 @@ img{
   display: block;
   background: $grey url('../img/bg-500.jpg') no-repeat;
   background-size: cover;
+  background-position: 20% 100%;
   position: relative;
   z-index: 200;
-  height: 165px;
+  height: 320px;
   padding: 50px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -270,7 +271,7 @@ img{
   text-transform: uppercase;
   h2{
     width: 100%;
-    max-width: 364px;
+    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
   }
